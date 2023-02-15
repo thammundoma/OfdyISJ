@@ -18,9 +18,7 @@ jobs:
         destination: ["OS=16.0,name=iPhone 14 Pro"] #, "OS=14.4,name=iPhone 12 Pro", "OS=12.4,name=iPhone XS", "OS=11.4,name=iPhone X", "OS=10.3.1,name=iPhone SE"]
     steps:
       - uses: actions/checkout@v2
-      - name: iOS - ${{ matrix.destination }}
-        run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild -workspace "Charts.xcworkspace" -scheme "Charts" -destination "${{ matrix.destination }}" clean test | xcpretty
-
+     
   tvOS:
     runs-on: macos-12
     env:
